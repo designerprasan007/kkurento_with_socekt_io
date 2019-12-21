@@ -1,6 +1,10 @@
 install kurento setup from https://www.kurento.org/.
 run npm install
-cd static/  bower install --allow-root
+cd static/  
+
+run
+
+bower install --allow-root
 
 ../
 
