@@ -1,0 +1,179 @@
+/*
+ * (C) Copyright 2014-2015 Kurento (http://kurento.org/)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+@CHARSET "UTF-8";
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	padding-top: 40px;
+	body
+}
+.px{
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.bg-red{
+	color: red;
+}
+/*video,#console {
+	display: block;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow
+		ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#console {
+	min-height: 120px;
+	max-height: 360px;
+}*/
+
+.border-black{
+	border-bottom: 50px solid black;
+}
+.pt{
+	padding-top: 20px;
+}
+#videoContainer {
+	position: absolute;
+	float: left;
+}
+
+#videoBig {
+	width: 640px;
+	height: 480px;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+div#videoSmall {
+	width: 200px;
+	height: 150px;
+	padding: 0px;
+	position: absolute;
+	top: 50%;
+	left: 1081px;
+	cursor: pointer;
+	z-index: 10;
+	padding: 0px;
+}
+
+div.dragged {
+	cursor: all-scroll !important;
+	border-color: blue !important;
+	z-index: 10 !important;
+}
+.student-webinar-webinar {width: 100%;float: left;margin: 0px;padding: 0px;}
+.student-header {float: left; width: 100%; background-color:#000;padding: 22px 0;}
+.student-background-black {float: left;width: 100%;margin: 0px;background-color:#000;padding-bottom: 35px;}
+.student-in-left-img-bar {width: 5%;float: left;margin: 0px;padding: 0px;}
+
+.webinar-webinar .left-img-bar {
+    width: 100%;
+    float: left;
+    background-color: #000;
+    height: 100vh;
+}
+.in-right-to-paart {
+    float: right;
+    width: 65%;
+}
+.in-right-to-paart {
+    float: right;
+    width: 95%;
+}
+.in-right-to-paart {
+    float: right;
+    width: 95%;
+    margin-top: 20px;
+    margin-right: 15px;
+}
+
+.student-background-white {float: left;width: 100%;background-color:#fff;padding: 0px;margin: 0px;}
+.student-background-white .right-to-paart-student {width: 100%;float: left;margin: 0px;padding: 10px;}
+.student-background-white .right-to-paart-student .in-right-to-paart {float: right;width: 60%;margin-top: 0px;margin-right: 0px;}
+.student-background-white .right-to-paart-student .in-right-to-paart img {float: left;width: 100%;}
+.in-left-to-paart-student .in-left-to-student img {width: auto;float: left;}
+.in-left-to-paart-student .in-left-to-student img {width: 100%;float: left;padding: 0 10px;}
+.in-left-to-paart-student {width: 39%;float: left; margin: 0px;padding: 0px 10px;background-color: #f3f3f3;height: 80vh;position:relative;}
+.in-left-to-paart-student .in-left-to-student img {width: auto;float: left;}
+.in-left-to-paart-student .in-left-to-student img {width: 100%;float: left;padding: 0 10px;}
+.in-left-to-student {position: absolute;top: 50%;right: 0;left: 0;transform: translateY(-50%);}
+.outli-input-container {position: absolute;width: 96%;bottom: 20px;}
+.input-container .input-field {width: 100%; padding: 10px 11px;}
+.fa {position: absolute;right: 10px;top: 10px;}
+.input-container .input-field {width: 100%;padding: 10px 11px;}
+.input-container {position: relative;float: left;width: 100%;}
+.input-container .input-field::placeholder {width: 100%;padding: 10px 11px;color:#000;opacity: 1;font-family: arial;    font-size: 12px;}
+.in-left-to-paart-student .in-left-to-student img {width: 100%;float: left;padding: 0 10px;}
+.in-left-to-student {position: absolute;top: 50%;right: 0;left: 0;transform: translateY(-50%);}
+.outli-input-container {position: absolute;width: 96%;bottom: 20px;}
+.tabcontent-inner-content .tabcontent-input-field {
+    float: left;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.tabcontent-inner-content .tabcontent-input-field input {
+    float: left;
+    width: 65%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #636363;
+}
+
+.tabcontent-inner-content .tabcontent-input-field label {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    text-align: right;
+}
+
+.tabcontent-inner-content form {
+    float: none;
+    display: table;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.tabcontent-input-field.btn-cntrl input {
+    background: #00a600;
+    border: none;
+    color: #fff;
+    border-radius: 12px;
+    margin: 0 auto;
+    display: table;
+    float: none;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.tabcontent-inner-content .tabcontent-input-field.btn-cntrl {
+    margin-top: 20px;
+}

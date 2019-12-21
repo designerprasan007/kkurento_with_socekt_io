@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="img/kurento.png" type="image/png"/>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/demo-console/index.css">
+    <link rel="stylesheet" href="bower_components/ekko-lightbox/dist/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="css/kurento.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+      crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <script src="bower_components/webrtc-adapter/release/adapter.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/demo-console/index.js"></script>
+    <script src="bower_components/draggabilly/dist/draggabilly.pkgd.min.js"></script>
+    <script src="bower_components/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+    <script src="bower_components/kurento-utils/js/kurento-utils.js"></script>
+    <script src="js/index.js"></script>
+    <title>Kurento Tutorial 4: Video Call 1 to 1 with WebRTC</title>
+    <style type="text/css">
+
+    </style>
+  </head>
+  <body>
+<!-- <div class="student-webinar-webinar"> -->
+        <!-- <div class="student-header"></div>
+        <div class="border-black"> -->
+         <!--  <div class="student-in-left-img-bar">
+            <div class="left-img-bar">
+                      </div>
+                    </div> -->
+                  <!--   <div class="student-background-white">
+                      <div class="right-to-paart-student">
+                        <div class="in-left-to-paart-student"> -->
+                        <!--   <div class="in-left-to-student px-3">
+                               <img src="img/right-student-Untitled-2.png"> -->
+                         <!--   <div class="form-group">
+                              <label for="exampleInputEmail1">Enter your name</label>
+                                <input id="name" name="name" class="form-control" type="text"/>
+                            </div>
+                          
+                              <a id="register" href="#" class="btn btn-primary">
+                               <span class="glyphicon glyphicon-plus"></span> Register</a>
+                                <div class="form-group">
+                              <label for="exampleInputPassword1">Enter Peer name</label>
+                            <input id="peer" name="peer" class="form-control" type="text">
+                            </div> -->
+                          <!-- </div> --> 
+                          	<!-- <div class="outli-input-container" id="message-container">
+                          		<form class="input-container" id="send-container">
+                          			<input type="text" class="form-control" id="message=input">
+                          			<button type="submit" id="send-button">send</button>
+                          		</form>	
+                          	</div>	 -->
+                           <!--  <div class="outli-input-container">
+                              <div class="input-container">
+                                <input class="input-field" type="text" name="psw">
+                                  <div class="fa">
+                                    <img src="img/teer-Untitled-5.png">
+                                    </div>
+                                  </div>
+                                </div> -->
+                              <!-- </div> -->
+                              <div class="in-right-to-paart">
+                                 <div class="form-group">
+                              <label for="exampleInputEmail1">Enter your name</label>
+                                <input id="name" name="name" class="form-control" type="text"/>
+                            </div>
+                          
+                              <a id="register" href="#" class="btn btn-primary">
+                               <span class="glyphicon glyphicon-plus"></span> Register</a>
+                                <div class="form-group">
+                              <label for="exampleInputPassword1">Enter Peer name</label>
+                            <input id="peer" name="peer" class="form-control" type="text">
+                            </div>
+                          </div>
+                                <div id="videoBig">
+                                    <video id="videoOutput" autoplay></video>
+                                </div>
+                                <div id="videoSmall">
+                                  <video id="videoInput" autoplay width="1px" height="1px" style="display: none"></video>
+                                </div>  
+                                <div class="d-block text-center">
+                                   <a class="px-5" id="call" href="#" >
+                                    <i class="fas fa-video fa-2x"></i></a>
+                                  	<a class="px-5" onclick="mute()" href="#"><i class="fas fa-microphone-alt-slash fa-2x text-dark"></i></a>
+                                  	<a class="px-5 text-danger" id="terminate"  class="" href="#" ><i class="fas fa-video-slash fa-2x px bg-red"></i></a>
+                                </div>  
+                                <div class="pt-5">
+                                	<article class="border-black"></article>
+                                </div>  
+                              <!-- </div> -->
+                            <!-- </div> -->
+                          <!-- </div> -->
+                        <!-- </div> -->
+
+
+<!-- <audio id="background_audio" autoplay="true" loop="loop">
+          <source src="Audio/flute.mp3">
+If you are reading this, it is because your browser does not support the audio element.
+</audio>
+ -->
+
+
+
+     <!--  <div class="row">
+        <div class="col-md-5">
+          <label class="control-label" for="name">Name</label>
+          <div class="row">
+            <div class="col-md-6">
+              <input id="name" name="name" class="form-control" type="text"/>
+            </div>
+            <div class="col-md-6 text-right">
+              <a id="register" href="#" class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus"></span> Register</a>
+            </div>
+          </div>
+          <br/>
+          <br/>
+          <label class="control-label" for="peer">Peer</label>
+          <div class="row">
+            <div class="col-md-6">
+              <input id="peer" name="peer" class="form-control" type="text">
+            </div>
+            <div class="col-md-6 text-right">
+              <a id="call" href="#" class="btn btn-success">
+                <span class="glyphicon glyphicon-play"></span> Call</a>
+              <a id="terminate" href="#" class="btn btn-danger">
+                <span class="glyphicon glyphicon-stop"></span> Stop</a>
+            </div>
+          </div>
+          <br/>
+         
+        <div class="col-md-7">
+          <div id="videoBig">
+            <video id="videoOutput" autoplay width="640px" height="480px"></video>
+          </div>
+          <div id="videoSmall">
+            <video id="videoInput" autoplay width="200px" height="150px"></video>
+          </div>
+        </div>
+      </div>
+    </div> -->
+ <label class="control-label" style="display: none" for="console">Console</label><br><br>
+          <div id="console" class="democonsole" style="display: none;">
+            <ul></ul>
+          </div>
+        </div>
+  </body>
+</html>

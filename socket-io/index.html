@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Liveonline4u</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+<style>
+	#msgarea{
+		display: none;
+	}
+	.bg_dark{
+		background-color: black;
+		padding:20px;
+	}
+	.msgschat{
+		height: 100%;
+		background-color: grey;
+		/*position: relative;*/
+	}
+	  iframe {
+            width: 1060px;
+            height: 720px;
+        }
+    ul {
+      height: 200px;
+      overflow-y: scroll;
+      background-color: white;
+  }
+	 .comment_area {
+            height: 85%;
+        }
+   .inline {
+          overflow: hidden;
+      }
+      
+	.pad{
+		padding-top: 70%;
+	}	
+
+</style>
+</head>
+<body> 
+	<div class="bg_dark"></div>
+		<div class="row no-gutters">
+			<div class="col-md-4">
+				<div class="pad">
+				</div>
+						<ul class="chat list-group list-group-flush container_base" id="chat">
+                <li class="list-group-item well" id="chat-msgs"></li>
+            </ul>
+				<div class="bottom pt-5">
+					<nav class="navbar navbar-light bg-light" id="form">
+					  <form class="form-inline col-md-12">
+					    <input class="form-control col-md-10" type="search" id="message" aria-label="Msgs">
+					    <button class="btn btn-outline-success btn-sm" type="submit">Send</button>
+					  </form>
+					</nav>
+
+
+					<!-- 	<form id="form">
+							  <div class="form-group">
+							    <input type="text" class="form-control" name="msgs" id="message">
+  								<input type="submit" class="btn btn-success" value="send">
+							  </div>
+						</form> -->
+					</div>
+			</div>
+			
+			<div class="col-md-8">
+				<div class="large">
+					<iframe src="https://178.128.5.79:8443/" style="" ></iframe>
+				</div>
+
+			</div>	
+		</div>
+
+		
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	$(function(){
+		var socket = io.connect();
+		var $msgform = $('#form');
+		var $message = $('#message');
+		var $chat = $('#chat');
+		var $msgarea = $('#msgarea');
+
+		$msgform.submit(function(e){
+			e.preventDefault();
+			// console.log('submit')
+			socket.emit('send message', $message.val());
+			$message.val('');
+		});
+		socket.on('new message', function(data){
+			$chat.append('<div class="well">' +data.text+'</div>');
+		});
+	});
+</script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
