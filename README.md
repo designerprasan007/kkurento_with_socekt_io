@@ -1,4 +1,9 @@
 install kurento setup from https://www.kurento.org/.
+
+
+
+
+
 run npm install
 cd static/  
 
