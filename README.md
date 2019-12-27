@@ -10,14 +10,22 @@ cd static/
 run
 
 bower install --allow-root
+after bower install come back to the main source by 
+
 
 ../
 
 node server.js // kurento will start to serv
 
-now to add the socketio follow this stres
+now to add the socketio follow this steps
+
+
 cd /socket-io
+
+
 npm install.
+
+
 node index.js
 
 your web is ready to serve.
