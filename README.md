@@ -4,20 +4,34 @@ install kurento setup from https://www.kurento.org/.
 
 
 
-run npm install
+1. run npm install
+
+//after installation of npm packages move to static
+
 cd static/  
 
-run
+// in static directory run command
+
+
 
 bower install --allow-root
-after bower install come back to the main source by 
+
+
+
+//after bower install come back to the main source by where you previously installed npm packages
 
 
 ../
 
-node server.js // kurento will start to serv
+node server.js 
 
-now to add the socketio follow this steps
+
+
+// kurento will start to serv
+
+
+
+// now to add the socket.io follow this steps
 
 
 cd /socket-io
