@@ -11,6 +11,6 @@
   "dependencies": {
     "express": "*",
     "node-php-server": "^0.1.2",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.5.0"
   }
 }
